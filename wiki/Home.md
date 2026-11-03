@@ -9,7 +9,7 @@
 
 - This page follows the runtime from `build/Invoke-TranscodeAutomation.ps1` through the functions and scripts it invokes. These sections are intended for tracing execution flows.
 
-## Startup And Scheduler
+### Startup And Scheduler
 
 ```mermaid
 flowchart TD
@@ -78,7 +78,7 @@ flowchart TD
   click sleep "#startup-and-scheduler" "Waits PROCDELAY seconds, then returns to the scheduler window check."
 ```
 
-## File Processing
+### File Processing
 
 ```mermaid
 flowchart TD
