@@ -102,3 +102,4 @@
     - Rename database to media.db
     - Add fix for skipcheck files not being removed if multiple files exist.
     - Add Breaking change notes to the wiki outlining updating grafana data source.
+- 5.0.1 Fix datasource for mediafunction module manual functions.

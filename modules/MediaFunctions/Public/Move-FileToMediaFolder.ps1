@@ -1,12 +1,12 @@
 function Move-FileToMEDIAFolder {
 
     [CmdletBinding()]
-    Param (
+    param (
     )
 
     [string[]]$mediashowfolders = $env:MEDIASHOWFOLDERS -split ', '
     [string[]]$mediamoviefolders = $env:MEDIAMOVIEFOLDERS -split ', '
-    [string]$DataSource = "/docker-transcodeautomation/data/MediaDB.SQLite"
+    [string]$DataSource = "/docker-transcodeautomation/data/media.db"
 
 
     #Used in debug logs

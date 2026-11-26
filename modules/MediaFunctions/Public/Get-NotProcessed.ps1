@@ -6,15 +6,15 @@ Get a list of files not yet transcoded.
 Get-NotProcessed
 #>
 
-Function Get-NotProcessed {
+function Get-NotProcessed {
 
     [CmdletBinding()]
-    Param (
+    param (
     )
 
     [string[]]$mediashowfolders = $env:MEDIASHOWFOLDERS -split ', '
     [string[]]$mediamoviefolders = $env:MEDIAMOVIEFOLDERS -split ', '
-    [string]$DataSource = "/docker-transcodeautomation/data/MediaDB.SQLite"
+    [string]$DataSource = "/docker-transcodeautomation/data/media.db"
 
     #Movies
     foreach ($mediamoviefolder in $mediamoviefolders) {
