@@ -102,7 +102,7 @@ function Build-TranscodeParams {
                 break
             }
         }
-    }
+    }This accepts a filename, but not fullname.
 
     # Dolby Vision Detection and parameter add
     $dolbyVisionProfile = $null
