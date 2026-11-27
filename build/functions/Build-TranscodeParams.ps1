@@ -15,7 +15,7 @@ The constant rate factor to be used for the video file.
 The fullpath for the output file to be processed.
 
 .PARAMETER video
-The fullpath for the video file to be processed and not the fullpath.
+The fullname of the video being processed.
 
 .EXAMPLE
 Write-Output "info: Build-TranscodeParams Start"
@@ -37,7 +37,7 @@ function Build-TranscodeParams {
         [Parameter(Mandatory = $true, HelpMessage = "This should be the immutable index.")][ValidateNotNullOrEmpty()][string]$comment,
         [Parameter(Mandatory = $true, HelpMessage = "This is the constant rate factor.")][ValidateNotNullOrEmpty()][string]$crf,
         [Parameter(Mandatory = $true, HelpMessage = "This is the video out file.")][ValidateNotNullOrEmpty()][string]$output,
-        [Parameter(Mandatory = $true, HelpMessage = "This accepts a filename, but not fullname.")][ValidateNotNullOrEmpty()][string]$video
+        [Parameter(Mandatory = $true, HelpMessage = "The fullname of the video being processed.")][ValidateNotNullOrEmpty()][string]$video
     )
 
     $out = ffprobe -hide_banner -loglevel error -select_streams v -print_format json -show_frames -read_intervals "%+#1" -show_entries "frame=color_space,color_primaries,color_transfer,side_data_list,color_range,color_matrix,bit_depth,chroma_subsampling,stream_side_data=type,stream=codec_tag_string,profile" -i $video
